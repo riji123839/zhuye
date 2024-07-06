@@ -1,16 +1,18 @@
 <template>
   <div id="loader-wrapper" :class="store.imgLoadStatus ? 'loaded' : null">
     <div class="loader">
-      <div class="loader-circle" />
+      <div class="loader-sphere">
+        <div class="loader-circle loader-circle1"></div>
+        <div class="loader-circle loader-circle2"></div>
+        <div class="loader-circle loader-circle3"></div>
+      </div>
       <div class="loader-text">
-        <span class="name">
-          {{ siteName }}
-        </span>
-        <span class="tip"> 加载中 </span>
+        <span class="name">{{ siteName }}</span>
+        <span class="tip">加载中</span>
       </div>
     </div>
-    <div class="loader-section section-left" />
-    <div class="loader-section section-right" />
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
   </div>
 </template>
 
@@ -42,39 +44,31 @@ const siteName = import.meta.env.VITE_SITE_NAME;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    .loader-circle {
+    .loader-sphere {
       width: 150px;
       height: 150px;
-      border-radius: 50%;
-      border: 3px solid transparent;
-      border-top-color: #fff;
-      animation: spin 1.8s linear infinite;
-      z-index: 2;
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        right: 5px;
-        bottom: 5px;
+      position: relative;
+      perspective: 1000px;
+      .loader-circle {
+        width: 100%;
+        height: 100%;
         border-radius: 50%;
+        position: absolute;
         border: 3px solid transparent;
-        border-top-color: #a4a4a4;
-        animation: spin-reverse 0.6s linear infinite;
+        border-top-color: #fff;
       }
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        right: 15px;
-        bottom: 15px;
-        border-radius: 50%;
-        border: 3px solid transparent;
+      .loader-circle1 {
+        animation: spin-sphere 1.8s linear infinite;
+      }
+      .loader-circle2 {
+        border-top-color: #a4a4a4;
+        animation: spin-sphere-reverse 0.6s linear infinite;
+        transform: rotateX(90deg);
+      }
+      .loader-circle3 {
         border-top-color: #d3d3d3;
-        animation: spin 1s linear infinite;
+        animation: spin-sphere 1s linear infinite;
+        transform: rotateY(90deg);
       }
     }
     .loader-text {
@@ -113,7 +107,7 @@ const siteName = import.meta.env.VITE_SITE_NAME;
       transform 0.3s 1s ease-out,
       visibility 0.3s 1s ease-out;
     .loader {
-      .loader-circle,
+      .loader-sphere,
       .loader-text {
         opacity: 0;
         transition: opacity 0.3s ease-out;
@@ -132,7 +126,7 @@ const siteName = import.meta.env.VITE_SITE_NAME;
   }
 }
 
-@keyframes spin {
+@keyframes spin-sphere {
   0% {
     transform: rotate(0deg);
   }
@@ -141,7 +135,7 @@ const siteName = import.meta.env.VITE_SITE_NAME;
   }
 }
 
-@keyframes spin-reverse {
+@keyframes spin-sphere-reverse {
   0% {
     transform: rotate(0deg);
   }
@@ -150,3 +144,4 @@ const siteName = import.meta.env.VITE_SITE_NAME;
   }
 }
 </style>
+
