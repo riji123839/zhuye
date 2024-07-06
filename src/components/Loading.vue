@@ -18,6 +18,7 @@
 import { mainStore } from "@/store";
 
 const store = mainStore();
+store.imgLoadStatus = false; // 手动设置为 false 以查看加载动画
 
 // 配置
 const siteName = import.meta.env.VITE_SITE_NAME;
@@ -128,28 +129,28 @@ const siteName = import.meta.env.VITE_SITE_NAME;
 
 @keyframes rotate-one {
   0% {
-    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes rotate-two {
   0% {
-    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes rotate-three {
   0% {
-    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    transform: rotate(360deg);
   }
 }
 </style>
