@@ -1,12 +1,12 @@
 [
   {
     "icon": "Blog",
-    "name": "个人博客",
+    "name": "个人博客(重构中)",
     "link": "https://kingkg.com/"
   },
   {
     "icon": "Cloud",
-    "name": "个人图床",
+    "name": "个人图床(重构中)",
     "link": "https://tu.ygking.top/"
   },
   {
@@ -16,7 +16,7 @@
   },
   {
     "icon": "Compass",
-    "name": "个人起始页",
+    "name": "个人起始页(重构中)",
     "link": "https://dao.wrnm.site/"
   },
   {
@@ -26,7 +26,7 @@
   },
   {
     "icon": "Fire",
-    "name": "个人影视站",
+    "name": "个人影视站(重构中)",
     "link": "https://wcnm.info/"
   },
   {
