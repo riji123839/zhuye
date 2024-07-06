@@ -26,13 +26,13 @@
   {
     "name": "Twitter",
     "icon": "/images/icon/twitter.png",
-    "tip": "你懂的 ~",
+    "tip": "这个你懂的 ~",
     "url": ""
   },
   {
     "name": "Telegram",
     "icon": "/images/icon/telegram.png",
-    "tip": "你懂的 ~",
+    "tip": "这个你懂的 ~",
     "url": ""
   }
 ]
